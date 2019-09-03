@@ -33,7 +33,7 @@ As has already been mentioned, this project develops a chat room application. Bo
 In this section, the four tests covered are listed:
 
 * Login: the title of the page before (Chat Room Login) and after (Chat Room) login has been checked.
-* Join: it is checked that a given user joins the chat after login. To this end, the user name at both login and the chat page is verified.
+* Join: it is checked that a given user joins the chat after login. To this end, the user name at both login and chat page is verified.
 * Chat: it is checked that a given user sends a message to the server and then receives it back from the server.
 * Leave: a second window tab is opened and then closed (user leaves the chat). Then, it is checked that the leave message is received on the first tab.
 
@@ -44,7 +44,7 @@ The procedure to obtain functional a copy of the project on your local machine s
 * Firstly, you have to download/clone the project files from this repository onto your local machine. Then, cd into the root folder where the project files are located.
 * Secondly, if you want to run the Selenium tests yourself, you have to:
     * Install ChromeDriver, which is the web driver chosen to test the application. Please, follow the quick installation [here](https://github.com/SeleniumHQ/selenium/wiki/ChromeDriver#quick-installation). For instance, if you are on a Mac, just type `brew tap homebrew/cask && brew cask install chromedriver`.
-    * On an IDE such as IntelliJ, right click on the *src/test/java/edu/udacity/java/WebSocketChatApplicationTestLogin* file, and choose *run*. 
+    * On an IDE such as IntelliJ, run the application (type `mvn spring-boot:run`), right click on the *src/test/java/edu/udacity/java/WebSocketChatApplicationTestLogin* file, and choose *run*.
     * This is the result that you would obtain. All four tests pass:
     ![testsresult](/ScreenShots/testsresult.png)
     ![testsresult2](/ScreenShots/testsresult2.png)
@@ -52,7 +52,7 @@ The procedure to obtain functional a copy of the project on your local machine s
 ![package](/ScreenShots/package.png)
 which creates the *jar* file at *target/chatroom-starter-0.0.1-SNAPSHOT.jar* file:
 ![jarfile](/ScreenShots/jarfile.png)
-Now, you can execute the *jar* file on your terminal shell window. Please, cd to the *target* directory first:
+Now, you can execute the *jar* file on your terminal shell window by typing `java -jar chatroom-starter-0.0.1-SNAPSHOT.jar`. Please, cd to the *target* directory first:
 ![executejar](/ScreenShots/executejar.png)
 * Finally, the application can be manually tested at *http://localhost:8080/*:
     * The user is initially shown the login page:
