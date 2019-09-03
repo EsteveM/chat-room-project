@@ -1,0 +1,10 @@
+# To review how to locate Thymeleaf template from spring boot see
+# https://stackoverflow.com/questions/41318005/how-to-locate-thymeleaf-template-from-spring-boot
+spring:
+  thymeleaf:
+    cache: false
+    check-template: true # Check that the template exists before rendering it
+    check-template-location: true # Check that the templates location exists
+    enabled: true # Enable MVC Thymeleaf view resolution
+    prefix: classpath:/templates/ # Prefix that gets prepended to view names when building a URL
+    suffix: .html # Suffix that gets appended to view names when building a URL
