@@ -58,9 +58,9 @@ Just run the *jar* file on your terminal shell window by typing `java -jar chatr
     * When one of the participants leaves the chat, participants are informed, and the number of online users is decreased in accordance with it:
     ![screen4](/ScreenShots/screen4.png)
 * Finally, if you want to run the supporting unit tests yourself, you have to:
-    * Make sure the application is running. For instance, as described above, by by typing `java -jar chatroom-starter-0.0.1-SNAPSHOT.jar` at the target folder.  
-    * Make sure you have the latest version of the Chrome browser (version 76), as these test are web driver ones under JUnit.
-    * Open a new terminal shell window and type, for instance, `mvn test`.
+    * Make sure the application is running. For instance, as described above, by typing `java -jar chatroom-starter-0.0.1-SNAPSHOT.jar` at the target folder.  
+    * Make sure you have the latest version of the Chrome browser (version 76), as these test are web driver ones (under the existing framework JUnit).
+    * Open a new terminal shell window and type, for instance, `mvn test`. Please, cd to the root directory of the project first, as this action requires a project to be executed, and a POM file must be present.
     * This is the result that you would obtain. All four tests pass:
     ![testsresult](/ScreenShots/testsresult.png)
     ![testsresult2](/ScreenShots/testsresult2.png)
