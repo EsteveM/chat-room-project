@@ -26,7 +26,7 @@ As has already been mentioned, this project develops a chat room application. Bo
     * onClose: the registration of user name and session is removed. In addition, a message is sent to all participants communicating the fact that a user has just left the chat.
     * sendMessageToAll: this method sends a given message to all participants.
 * src/main/resources/application.yml file: a number of configuration parameters have been added with regards to thymeleaf.
-* src/test/java/edu/udacity/java/WebSocketChatApplicationTestLogin: a number of web driver tests have been added covering login, join, chat, and leave. The web driver chosen has been the ChromeDriver, and Selenium tests have been used. All tests pass, and the application is then repackaged.
+* src/test/java/edu/udacity/java/WebSocketChatApplicationTestLogin: a number of web driver tests have been added within the existing framework JUnit, covering login, join, chat, and leave. All tests pass, and the application is then repackaged.
 
 ## Testing code coverage
 
@@ -35,26 +35,20 @@ In this section, the four tests covered are listed:
 * Login: the title of the page before (Chat Room Login) and after (Chat Room) login has been checked.
 * Join: it is checked that a given user joins the chat after login. To this end, the user name at both login and chat page is verified.
 * Chat: it is checked that a given user sends a message to the server and then receives it back from the server.
-* Leave: a second window tab is opened and then closed (user leaves the chat). Then, it is checked that the leave message is received on the first tab.
+* Leave: a second window tab is opened and then the user exits the chat page (Chat Room), i.e. leaves the chat. Then, it is checked that the leave message is received on the first tab.
 
 ## Getting Started
 
 The procedure to obtain functional a copy of the project on your local machine so that you can further develop and/or test it is explained in this section. These are the steps to be followed:
 
 * Firstly, you have to download/clone the project files from this repository onto your local machine. Then, cd into the root folder where the project files are located.
-* Secondly, if you want to run the Selenium tests yourself, you have to:
-    * Install ChromeDriver, which is the web driver chosen to test the application. Please, follow the quick installation [here](https://github.com/SeleniumHQ/selenium/wiki/ChromeDriver#quick-installation). For instance, if you are on a Mac, just type `brew tap homebrew/cask && brew cask install chromedriver`.
-    * On an IDE such as IntelliJ, run the application (type `mvn spring-boot:run`), right click on the *src/test/java/edu/udacity/java/WebSocketChatApplicationTestLogin* file, and choose *run*.
-    * This is the result that you would obtain. All four tests pass:
-    ![testsresult](/ScreenShots/testsresult.png)
-    ![testsresult2](/ScreenShots/testsresult2.png)
-* Thirdly, you can execute the packaged application. This is the result of the execution of the packaging step:
+* Secondly, you can execute the packaged application. This is the result of the execution of the packaging step:
 ![package](/ScreenShots/package.png)
-which creates the *jar* file at *target/chatroom-starter-0.0.1-SNAPSHOT.jar* file:
+which creates the *jar* file at *target/chatroom-starter-0.0.1-SNAPSHOT.jar*:
 ![jarfile](/ScreenShots/jarfile.png)
-Now, you can execute the *jar* file on your terminal shell window by typing `java -jar chatroom-starter-0.0.1-SNAPSHOT.jar`. Please, cd to the *target* directory first:
+Just run the *jar* file on your terminal shell window by typing `java -jar chatroom-starter-0.0.1-SNAPSHOT.jar`. Please, cd to the *target* directory first:
 ![executejar](/ScreenShots/executejar.png)
-* Finally, the application can be manually tested at *http://localhost:8080/*:
+* Thirdly, the application can be manually tested at *http://localhost:8080/*:
     * The user is initially shown the login page:
     ![screen1](/ScreenShots/screen1.png)
     * They enter their desired user name, and join the chat:
@@ -63,7 +57,14 @@ Now, you can execute the *jar* file on your terminal shell window by typing `jav
     ![screen3](/ScreenShots/screen3.png)
     * When one of the participants leaves the chat, participants are informed, and the number of online users is decreased in accordance with it:
     ![screen4](/ScreenShots/screen4.png)
-
+* Finally, if you want to run the supporting unit tests yourself, you have to:
+    * Make sure the application is running. For instance, as described above, by by typing `java -jar chatroom-starter-0.0.1-SNAPSHOT.jar` at the target folder.  
+    * Make sure you have the latest version of the Chrome browser (version 76), as these test are web driver ones under JUnit.
+    * Open a new terminal shell window and type, for instance, `mvn test`.
+    * This is the result that you would obtain. All four tests pass:
+    ![testsresult](/ScreenShots/testsresult.png)
+    ![testsresult2](/ScreenShots/testsresult2.png)
+    ![testsresult3](/ScreenShots/testsresult3.png)
 ## Contributing
 
 This repository contains all the work that makes up the project. Individuals and I myself are encouraged to further improve this project. As a result, I will be more than happy to consider any pull requests.
